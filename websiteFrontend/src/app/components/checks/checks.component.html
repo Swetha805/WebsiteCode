@@ -1,0 +1,42 @@
+
+<br><br>
+
+<br>
+
+
+    <div class="col-sm-8 offset-sm-2">
+
+
+    <br>
+ 
+    </div>
+
+
+<div class="container">
+    
+    <div class="row border border-dark rowHeadStyle" id="heading">
+        <div class="col">Website Name</div>
+        <div class="col">Website Url</div>
+        <div class="col">Frequency</div>
+        <div class="col">Status</div>
+        <div class="col"></div>
+        
+    </div>
+    <div *ngIf="(checkDetails.length)!=0 ;else noStuff">
+        <div *ngFor="let check of checkDetails" class="row rowStyle">
+            <div class="col">{{check.websiteName}}</div>
+            <div class="col">{{check.websiteUrl}}</div>
+            <div class="col">{{check.frequency}}</div>
+            <div class="col">{{check.siteStatus}}</div>
+            <div class="col"><button (click)="delete(check)" class=" btn btn-sm"> <i style="color: #AEAEAF;" class="bi bi-trash3-fill"></i></button></div>
+            
+        </div>
+    </div>
+    <ng-template #noStuff>
+        <div class="text-center" colspan="5">
+            Nothing to Show     
+        </div> 
+    </ng-template>
+
+
+</div>

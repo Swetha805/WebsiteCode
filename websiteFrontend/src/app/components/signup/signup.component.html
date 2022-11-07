@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-sm-6 offset-sm-3">
+        <div class="text-center">
+            <h3>SignUp</h3>
+            <input type="text" class="form-control" (keyup)="userValidate(userName)" placeholder="UserName" #userName name="" id="">
+            <p *ngIf="!usernameRegexVal" class="text-danger">{{usernameError}}</p><br>
+            <input type="password" class="form-control" (keyup)="passwordValidate(password)" placeholder="Password" #password name="" id="">
+            <p *ngIf="!passwordRegexVal" class="text-danger">{{passwordError}}</p><br>
+
+            <br>
+            <button class="btn btn-primary" [disabled]="!(passwordRegexVal && usernameRegexVal)" (click)="signIn(userName,password)">Sign Up</button> &nbsp;
+            <button class="btn btn-primary" (click)="toLogin()">Login</button>
+        </div>
+    </div>
+</div>
